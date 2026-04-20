@@ -45,7 +45,6 @@
 
       <!-- Standalone Server -->
       <div class="bg-gray-900/80 border border-gray-700 rounded-3xl overflow-hidden hover:border-emerald-500 transition-all group">
-        <!-- Custom Header Image -->
         <img src="https://i.imgur.com/7dyP8ks.png" 
              alt="Golden State Roleplay Standalone" 
              class="w-full h-48 object-cover">
@@ -54,6 +53,11 @@
           <span class="px-4 py-1.5 bg-emerald-500/10 text-emerald-400 text-sm font-semibold rounded-2xl">STANDALONE</span>
           <h3 class="text-3xl font-bold mt-4">Golden State Roleplay</h3>
           <p class="text-gray-400 mt-1">Classic Roleplay Experience</p>
+
+          <div id="standalone-count" class="mt-6 flex items-center gap-3 text-xl font-semibold">
+            <span class="text-emerald-400">Players:</span>
+            <span class="text-white" id="standalone-players">Loading...</span>
+          </div>
 
           <a href="https://cfx.re/join/g3ox9z" target="_blank"
              class="block w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-black font-bold text-2xl py-7 rounded-3xl text-center transition-all hover:scale-105 shadow-xl shadow-emerald-500/30 mt-8">
@@ -65,7 +69,6 @@
 
       <!-- Economy Server -->
       <div class="bg-gray-900/80 border border-gray-700 rounded-3xl overflow-hidden hover:border-amber-500 transition-all group">
-        <!-- Custom Header Image -->
         <img src="https://i.imgur.com/roim6la.png" 
              alt="Golden State Economy" 
              class="w-full h-48 object-cover">
@@ -74,6 +77,11 @@
           <span class="px-4 py-1.5 bg-amber-500/10 text-amber-400 text-sm font-semibold rounded-2xl">ECONOMY</span>
           <h3 class="text-3xl font-bold mt-4">Golden State Economy</h3>
           <p class="text-gray-400 mt-1">Heavy Economy Focused RP</p>
+
+          <div id="economy-count" class="mt-6 flex items-center gap-3 text-xl font-semibold">
+            <span class="text-amber-400">Players:</span>
+            <span class="text-white" id="economy-players">Loading...</span>
+          </div>
 
           <a href="https://cfx.re/join/bdxkv4l" target="_blank"
              class="block w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-black font-bold text-2xl py-7 rounded-3xl text-center transition-all hover:scale-105 shadow-xl shadow-amber-500/30 mt-8">
@@ -97,9 +105,38 @@
     </div>
 
     <div class="text-center text-gray-500 text-sm mt-12">
-      Powered by FiveM • Hosted on Bisect Hosting
+      Live player counts • Powered by FiveM • Hosted on Bisect Hosting
     </div>
   </div>
 
+  <script>
+    async function fetchPlayerCount(cfxCode, elementId) {
+      try {
+        const response = await fetch(`https://servers-frontend.fivem.net/api/servers/single/${cfxCode}`);
+        if (!response.ok) throw new Error('Failed to fetch');
+        
+        const data = await response.json();
+        const players = data.Data?.clients || 0;
+        const maxPlayers = data.Data?.sv_maxclients || 64;
+        
+        document.getElementById(elementId).textContent = `${players} / ${maxPlayers}`;
+      } catch (error) {
+        document.getElementById(elementId).textContent = 'Offline';
+        console.error('Error fetching player count:', error);
+      }
+    }
+
+    // Fetch player counts on page load
+    window.onload = () => {
+      fetchPlayerCount('g3ox9z', 'standalone-players');
+      fetchPlayerCount('bdxkv4l', 'economy-players');
+      
+      // Refresh every 30 seconds
+      setInterval(() => {
+        fetchPlayerCount('g3ox9z', 'standalone-players');
+        fetchPlayerCount('bdxkv4l', 'economy-players');
+      }, 30000);
+    };
+  </script>
 </body>
 </html>
