@@ -31,10 +31,19 @@
           </p>
         </div>
       </div>
-      <a href="https://discord.gg/fmRhXJ9veq" target="_blank"
-         class="bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-2xl font-semibold flex items-center gap-2 transition">
-        <i class="fa-brands fa-discord"></i> JOIN DISCORD
-      </a>
+      
+      <div class="flex items-center gap-4">
+        <a href="https://www.tiktok.com/@georgiastateroleplay2026" target="_blank" class="text-2xl hover:text-pink-500 transition">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://www.youtube.com/@GSRPytd" target="_blank" class="text-2xl hover:text-red-500 transition">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://discord.gg/fmRhXJ9veq" target="_blank"
+           class="bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-2xl font-semibold flex items-center gap-2 transition">
+          <i class="fa-brands fa-discord"></i> JOIN DISCORD
+        </a>
+      </div>
     </div>
   </header>
 
@@ -59,11 +68,16 @@
             <span class="text-white" id="standalone-players">Loading...</span>
           </div>
 
-          <a href="https://cfx.re/join/g3ox9z" target="_blank"
-             class="block w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-black font-bold text-2xl py-7 rounded-3xl text-center transition-all hover:scale-105 shadow-xl shadow-emerald-500/30 mt-8">
-            <i class="fa-solid fa-right-to-bracket mr-3"></i>
-            JOIN STANDALONE
-          </a>
+          <div class="mt-8 grid grid-cols-2 gap-4">
+            <a href="https://cfx.re/join/g3ox9z" target="_blank"
+               class="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-black font-bold py-5 rounded-3xl text-center transition-all hover:scale-105">
+              <i class="fa-solid fa-right-to-bracket mr-2"></i> JOIN
+            </a>
+            <a href="https://gsrpstandalone.tip4serv.com/" target="_blank"
+               class="bg-gray-800 hover:bg-gray-700 font-bold py-5 rounded-3xl text-center transition-all">
+              <i class="fa-solid fa-store mr-2"></i> STORE
+            </a>
+          </div>
         </div>
       </div>
 
@@ -83,25 +97,35 @@
             <span class="text-white" id="economy-players">Loading...</span>
           </div>
 
-          <a href="https://cfx.re/join/bdxkv4l" target="_blank"
-             class="block w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-black font-bold text-2xl py-7 rounded-3xl text-center transition-all hover:scale-105 shadow-xl shadow-amber-500/30 mt-8">
-            <i class="fa-solid fa-right-to-bracket mr-3"></i>
-            JOIN ECONOMY
-          </a>
+          <div class="mt-8 grid grid-cols-2 gap-4">
+            <a href="https://cfx.re/join/bdxkv4l" target="_blank"
+               class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-black font-bold py-5 rounded-3xl text-center transition-all hover:scale-105">
+              <i class="fa-solid fa-right-to-bracket mr-2"></i> JOIN
+            </a>
+            <a href="https://gsrpeconomy.tip4serv.com/" target="_blank"
+               class="bg-gray-800 hover:bg-gray-700 font-bold py-5 rounded-3xl text-center transition-all">
+              <i class="fa-solid fa-store mr-2"></i> STORE
+            </a>
+          </div>
         </div>
       </div>
 
     </div>
 
-    <!-- Discord Banner -->
-    <div class="mt-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 text-center">
-      <i class="fa-brands fa-discord text-5xl mb-4"></i>
-      <h3 class="text-3xl font-bold mb-2">Join Our Community</h3>
-      <p class="text-lg text-indigo-100 mb-6">Stay updated, get support, and meet other players</p>
-      <a href="https://discord.gg/fmRhXJ9veq" target="_blank"
-         class="inline-block bg-white text-black font-bold px-10 py-4 rounded-2xl hover:bg-gray-200 transition text-lg">
-        JOIN DISCORD SERVER
-      </a>
+    <!-- Social Media -->
+    <div class="mt-16 text-center">
+      <h3 class="text-2xl font-bold mb-6">Follow Us</h3>
+      <div class="flex justify-center gap-8 text-4xl">
+        <a href="https://www.tiktok.com/@georgiastateroleplay2026" target="_blank" class="hover:text-pink-500 transition">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://www.youtube.com/@GSRPytd" target="_blank" class="hover:text-red-500 transition">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://discord.gg/fmRhXJ9veq" target="_blank" class="hover:text-indigo-500 transition">
+          <i class="fa-brands fa-discord"></i>
+        </a>
+      </div>
     </div>
 
     <div class="text-center text-gray-500 text-sm mt-12">
@@ -122,16 +146,13 @@
         document.getElementById(elementId).textContent = `${players} / ${maxPlayers}`;
       } catch (error) {
         document.getElementById(elementId).textContent = 'Offline';
-        console.error('Error fetching player count:', error);
       }
     }
 
-    // Fetch player counts on page load
     window.onload = () => {
       fetchPlayerCount('g3ox9z', 'standalone-players');
       fetchPlayerCount('bdxkv4l', 'economy-players');
       
-      // Refresh every 30 seconds
       setInterval(() => {
         fetchPlayerCount('g3ox9z', 'standalone-players');
         fetchPlayerCount('bdxkv4l', 'economy-players');
