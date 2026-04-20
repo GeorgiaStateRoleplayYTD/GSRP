@@ -129,7 +129,7 @@
     </div>
 
     <div class="text-center text-gray-500 text-sm mt-12">
-      Live player counts • Powered by FiveM • Hosted on Bisect Hosting
+      Live player counts • Refreshes every 15 seconds • Powered by FiveM
     </div>
   </div>
 
@@ -149,6 +149,7 @@
       }
     }
 
+    // Initial fetch + refresh every 15 seconds
     window.onload = () => {
       fetchPlayerCount('g3ox9z', 'standalone-players');
       fetchPlayerCount('bdxkv4l', 'economy-players');
@@ -156,7 +157,7 @@
       setInterval(() => {
         fetchPlayerCount('g3ox9z', 'standalone-players');
         fetchPlayerCount('bdxkv4l', 'economy-players');
-      }, 30000);
+      }, 15000);   // 15 seconds
     };
   </script>
 </body>
