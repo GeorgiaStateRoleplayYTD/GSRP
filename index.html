@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden State Roleplay | FiveM Servers</title>
+  <title>Golden State Roleplay | FiveM</title>
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://i.imgur.com/hmzpjeL.png">
@@ -13,29 +13,21 @@
   
   <style>
     body {
-      background: linear-gradient(180deg, #0a0a0a, #1a0033);
-      background-attachment: fixed;
-      font-family: 'Inter', system-ui, sans-serif;
+      background: #0a0a0a;
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+      background-size: 40px 40px;
     }
-
-    .neon-text {
-      text-shadow: 0 0 10px rgb(168 85 247), 0 0 20px rgb(168 85 247);
+    .neon-orange {
+      text-shadow: 0 0 15px rgb(249 115 22);
     }
-
     .card {
-      transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .card:hover {
-      transform: translateY(-15px);
-      box-shadow: 0 30px 60px -15px rgba(168, 85, 247, 0.5);
+      transform: translateY(-12px);
+      box-shadow: 0 30px 60px -15px rgba(249, 115, 22, 0.3);
     }
-
-    .hero-bg {
-      background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1614850523459-8b7d0b5e3c3c?w=1920&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
     .join-btn {
       position: relative;
       overflow: hidden;
@@ -47,7 +39,7 @@
       left: -50%;
       width: 40%;
       height: 200%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
       transform: skewX(-25deg);
       transition: 0.7s;
     }
@@ -58,52 +50,107 @@
 </head>
 <body class="bg-black text-white min-h-screen">
 
-  <!-- Hero Section -->
-  <section class="hero-bg h-screen flex items-center relative">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <div class="inline-flex items-center gap-3 bg-purple-900/50 border border-purple-500/30 rounded-full px-6 py-2 mb-8">
-        <span class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></span>
-        <span class="uppercase tracking-widest text-sm font-medium">FiveM Roleplay</span>
+  <!-- Navigation -->
+  <nav class="border-b border-zinc-800 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-orange-500 rounded-xl flex items-center justify-center text-2xl font-black">GS</div>
+          <span class="text-2xl font-bold tracking-tighter">Golden State</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#" class="hover:text-orange-400 transition">Home</a>
+          <a href="#servers" class="hover:text-orange-400 transition">Servers</a>
+          <a href="https://gsrpstandalone.tip4serv.com/" target="_blank" class="hover:text-orange-400 transition">Store</a>
+          <a href="#" class="hover:text-orange-400 transition">Rules</a>
+          <a href="https://discord.gg/fmRhXJ9veq" target="_blank" class="hover:text-orange-400 transition">Community</a>
+        </div>
       </div>
       
-      <h1 class="text-7xl md:text-8xl font-black tracking-tighter neon-text mb-6">
-        GOLDEN STATE<br>ROLEPLAY
-      </h1>
-      <p class="text-2xl text-gray-300 max-w-2xl mx-auto mb-12">
-        Premium Roleplay Experience • Two Unique Servers
-      </p>
-      
-      <a href="https://discord.gg/fmRhXJ9veq" target="_blank"
-         class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 px-10 py-5 rounded-2xl text-xl font-bold transition-all hover:scale-105">
-        <i class="fa-brands fa-discord text-2xl"></i>
-        JOIN OUR DISCORD
-      </a>
+      <div class="flex items-center gap-4">
+        <a href="https://discord.gg/fmRhXJ9veq" target="_blank"
+           class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2.5 rounded-2xl text-sm font-semibold flex items-center gap-2 transition">
+          <i class="fa-brands fa-discord"></i> Discord
+        </a>
+        <a href="https://www.tiktok.com/@georgiastateroleplay2026" target="_blank" class="text-2xl hover:text-pink-500 transition">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://www.youtube.com/@GSRPytd" target="_blank" class="text-2xl hover:text-red-500 transition">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-orange-500/10 text-orange-400 px-5 py-2 rounded-full text-sm font-medium mb-6">
+            <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+            NOW OPEN
+          </div>
+          
+          <h1 class="text-6xl md:text-7xl font-black tracking-tighter leading-none neon-orange mb-6">
+            GOLDEN STATE<br>ROLEPLAY
+          </h1>
+          
+          <p class="text-2xl text-gray-300 mb-10 max-w-lg">
+            Premium FiveM Roleplay Experience.<br>
+            Two unique servers. One great community.
+          </p>
+          
+          <div class="flex flex-wrap gap-4">
+            <a href="#servers" 
+               class="bg-orange-500 hover:bg-orange-600 text-black font-bold px-10 py-4 rounded-2xl text-lg transition flex items-center gap-3">
+              Choose Server <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://discord.gg/fmRhXJ9veq" target="_blank"
+               class="border border-zinc-700 hover:border-zinc-500 font-bold px-10 py-4 rounded-2xl text-lg transition">
+              Join Discord
+            </a>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <img src="https://i.imgur.com/7dyP8ks.png" alt="Golden State Roleplay" 
+               class="rounded-3xl shadow-2xl border border-zinc-800">
+          <div class="absolute -bottom-6 -right-6 bg-zinc-900 border border-orange-500/30 rounded-2xl p-6 shadow-xl">
+            <div class="flex items-center gap-4">
+              <div class="text-4xl">🎮</div>
+              <div>
+                <p class="text-sm text-gray-400">Servers Online</p>
+                <p class="text-3xl font-bold text-emerald-400">2 / 2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Servers Section -->
-  <section class="max-w-6xl mx-auto px-6 py-24">
-    <h2 class="text-5xl font-bold text-center mb-16 tracking-tight">Choose Your Server</h2>
+  <section id="servers" class="max-w-7xl mx-auto px-6 pb-24">
+    <h2 class="text-5xl font-bold text-center mb-16">Our Servers</h2>
     
-    <div class="grid md:grid-cols-2 gap-10">
-
+    <div class="grid md:grid-cols-2 gap-8">
       <!-- Standalone -->
       <div class="card bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden">
         <img src="https://i.imgur.com/7dyP8ks.png" alt="Standalone" class="w-full h-64 object-cover">
         <div class="p-10">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="px-5 py-2 bg-emerald-500/10 text-emerald-400 font-semibold rounded-2xl text-sm">STANDALONE</span>
-          </div>
-          <h3 class="text-4xl font-bold mb-2">Golden State Roleplay</h3>
-          <p class="text-gray-400 text-lg">Classic Roleplay Experience</p>
+          <span class="px-6 py-2 bg-emerald-500/10 text-emerald-400 rounded-2xl text-sm font-semibold">STANDALONE</span>
+          <h3 class="text-4xl font-bold mt-6 mb-2">Golden State Roleplay</h3>
+          <p class="text-gray-400 text-lg">Classic Serious Roleplay Experience</p>
           
-          <div class="mt-10 grid grid-cols-2 gap-4">
+          <div class="mt-10 flex gap-4">
             <a href="https://cfx.re/join/g3ox9z" target="_blank"
-               class="join-btn col-span-1 bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-bold py-7 rounded-2xl text-xl flex items-center justify-center hover:brightness-110 transition">
+               class="join-btn flex-1 bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-bold py-6 rounded-2xl text-center text-lg">
               <i class="fa-solid fa-right-to-bracket mr-3"></i> JOIN SERVER
             </a>
             <a href="https://gsrpstandalone.tip4serv.com/" target="_blank"
-               class="join-btn col-span-1 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 font-bold py-7 rounded-2xl text-xl flex items-center justify-center transition">
+               class="join-btn flex-1 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 font-bold py-6 rounded-2xl text-center text-lg">
               <i class="fa-solid fa-store mr-3"></i> STORE
             </a>
           </div>
@@ -114,48 +161,69 @@
       <div class="card bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden">
         <img src="https://i.imgur.com/roim6la.png" alt="Economy" class="w-full h-64 object-cover">
         <div class="p-10">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="px-5 py-2 bg-amber-500/10 text-amber-400 font-semibold rounded-2xl text-sm">ECONOMY</span>
-          </div>
-          <h3 class="text-4xl font-bold mb-2">Golden State Economy</h3>
-          <p class="text-gray-400 text-lg">Heavy Economy Focused RP</p>
+          <span class="px-6 py-2 bg-amber-500/10 text-amber-400 rounded-2xl text-sm font-semibold">ECONOMY</span>
+          <h3 class="text-4xl font-bold mt-6 mb-2">Golden State Economy</h3>
+          <p class="text-gray-400 text-lg">Heavy Economy Focused Roleplay</p>
           
-          <div class="mt-10 grid grid-cols-2 gap-4">
+          <div class="mt-10 flex gap-4">
             <a href="https://cfx.re/join/bdxkv4l" target="_blank"
-               class="join-btn col-span-1 bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold py-7 rounded-2xl text-xl flex items-center justify-center hover:brightness-110 transition">
+               class="join-btn flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold py-6 rounded-2xl text-center text-lg">
               <i class="fa-solid fa-right-to-bracket mr-3"></i> JOIN SERVER
             </a>
             <a href="https://gsrpeconomy.tip4serv.com/" target="_blank"
-               class="join-btn col-span-1 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 font-bold py-7 rounded-2xl text-xl flex items-center justify-center transition">
+               class="join-btn flex-1 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 font-bold py-6 rounded-2xl text-center text-lg">
               <i class="fa-solid fa-store mr-3"></i> STORE
             </a>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Social & Links -->
-  <section class="bg-zinc-950 border-t border-b border-zinc-800 py-16">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold mb-10">Connect With Us</h3>
-      <div class="flex flex-wrap justify-center gap-8 text-5xl">
-        <a href="https://www.tiktok.com/@georgiastateroleplay2026" target="_blank" class="hover:text-pink-500 transition hover:scale-125">
-          <i class="fa-brands fa-tiktok"></i>
-        </a>
-        <a href="https://www.youtube.com/@GSRPytd" target="_blank" class="hover:text-red-500 transition hover:scale-125">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-        <a href="https://discord.gg/fmRhXJ9veq" target="_blank" class="hover:text-indigo-500 transition hover:scale-125">
-          <i class="fa-brands fa-discord"></i>
-        </a>
+  <!-- Social & Footer -->
+  <footer class="bg-zinc-950 border-t border-zinc-800 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-9 h-9 bg-orange-500 rounded-xl flex items-center justify-center text-2xl font-black">GS</div>
+            <span class="text-2xl font-bold">Golden State Roleplay</span>
+          </div>
+          <p class="text-gray-400">Premium FiveM Roleplay Community</p>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4 text-orange-400">Quick Links</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#servers" class="hover:text-white">Servers</a></li>
+            <li><a href="https://gsrpstandalone.tip4serv.com/" target="_blank" class="hover:text-white">Standalone Store</a></li>
+            <li><a href="https://gsrpeconomy.tip4serv.com/" target="_blank" class="hover:text-white">Economy Store</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4 text-orange-400">Community</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="https://discord.gg/fmRhXJ9veq" target="_blank" class="hover:text-white">Discord</a></li>
+            <li><a href="https://www.tiktok.com/@georgiastateroleplay2026" target="_blank" class="hover:text-white">TikTok</a></li>
+            <li><a href="https://www.youtube.com/@GSRPytd" target="_blank" class="hover:text-white">YouTube</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4 text-orange-400">Stay Updated</h4>
+          <p class="text-sm text-gray-400 mb-4">Join our Discord for announcements and events.</p>
+          <a href="https://discord.gg/fmRhXJ9veq" target="_blank"
+             class="block bg-orange-500 text-black font-bold py-4 rounded-2xl text-center hover:bg-orange-600">
+            JOIN DISCORD
+          </a>
+        </div>
+      </div>
+      
+      <div class="text-center text-gray-500 text-sm mt-16 pt-8 border-t border-zinc-800">
+        © 2026 Golden State Roleplay • Powered by FiveM • Hosted on Bisect Hosting
       </div>
     </div>
-  </section>
-
-  <footer class="py-12 text-center text-gray-500 text-sm">
-    Powered by FiveM • Hosted on Bisect Hosting • © Golden State Roleplay
   </footer>
 
 </body>
