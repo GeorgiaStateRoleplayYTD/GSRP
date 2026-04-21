@@ -34,10 +34,7 @@
     }
     .join-btn:hover::after { left: 150%; }
 
-    /* Circular Promo */
-    .promo-circle {
-      animation: float 3s ease-in-out infinite;
-    }
+    .promo-circle { animation: float 3s ease-in-out infinite; }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
@@ -45,19 +42,6 @@
   </style>
 </head>
 <body class="bg-black text-white min-h-screen">
-
-  <!-- Floating Circular Promo -->
-  <div class="fixed top-6 right-6 z-50 promo-circle">
-    <div onclick="copyDiscount()" 
-         class="w-36 h-36 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center text-center shadow-2xl cursor-pointer hover:scale-110 transition-all border-4 border-white/30">
-      <div class="text-black">
-        <p class="text-2xl font-black leading-none">$5.00</p>
-        <p class="text-sm font-bold tracking-widest">OFF</p>
-        <p class="text-xs mt-1 font-medium">EVERYTHING</p>
-        <p class="text-[10px] mt-2 bg-black/20 text-black py-0.5 px-4 rounded-full inline-block">CLICK TO COPY CODE</p>
-      </div>
-    </div>
-  </div>
 
   <!-- Navigation -->
   <nav class="border-b border-zinc-800 bg-black/80 backdrop-blur-md sticky top-0 z-40">
@@ -71,8 +55,8 @@
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
           <a href="#servers" class="hover:text-orange-400 transition">Servers</a>
           <a href="#rules" class="hover:text-orange-400 transition">Rules</a>
+          <a href="#members" class="hover:text-orange-400 transition">Members</a>
           <a href="#similar" class="hover:text-orange-400 transition">Similar Servers</a>
-          <a href="https://gsrpstandalone.tip4serv.com/" target="_blank" class="hover:text-orange-400 transition">Store</a>
         </div>
       </div>
       
@@ -105,17 +89,19 @@
             <a href="https://discord.gg/fmRhXJ9veq" target="_blank" class="border border-zinc-700 hover:border-zinc-500 font-bold px-10 py-4 rounded-2xl text-lg">Join Discord</a>
           </div>
         </div>
-        <div class="relative">
-          <img src="https://i.imgur.com/7dyP8ks.png" class="rounded-3xl shadow-2xl" alt="GSRP">
+        <div>
+          <img src="https://i.imgur.com/7dyP8ks.png" class="rounded-3xl shadow-2xl">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Servers Section -->
+  <!-- Servers -->
   <section id="servers" class="max-w-7xl mx-auto px-6 pb-24">
     <h2 class="text-5xl font-bold text-center mb-16">Our Servers</h2>
     <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Standalone -->
       <div class="card bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden">
         <img src="https://i.imgur.com/7dyP8ks.png" class="w-full h-64 object-cover">
         <div class="p-10">
@@ -129,114 +115,80 @@
         </div>
       </div>
 
-      <div class="card bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden">
-        <img src="https://i.imgur.com/roim6la.png" class="w-full h-64 object-cover">
+      <!-- Economy Maintenance -->
+      <div class="card bg-zinc-950 border border-red-800 rounded-3xl overflow-hidden">
+        <img src="https://i.imgur.com/roim6la.png" class="w-full h-64 object-cover grayscale">
         <div class="p-10">
-          <span class="px-6 py-2 bg-amber-500/10 text-amber-400 rounded-2xl text-sm font-semibold">ECONOMY</span>
+          <span class="px-6 py-2 bg-red-500/10 text-red-400 rounded-2xl text-sm font-semibold">MAINTENANCE</span>
           <h3 class="text-4xl font-bold mt-6 mb-2">Golden State Economy</h3>
-          <p class="text-gray-400">Heavy Economy Focused RP</p>
-          <div class="mt-10 flex gap-4">
-            <a href="https://cfx.re/join/bdxkv4l" target="_blank" class="join-btn flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold py-6 rounded-2xl text-center">JOIN SERVER</a>
-            <a href="https://gsrpeconomy.tip4serv.com/" target="_blank" class="join-btn flex-1 bg-zinc-900 border border-zinc-700 font-bold py-6 rounded-2xl text-center">STORE</a>
+          <p class="text-gray-400">Server is currently offline for upgrades</p>
+          <div class="mt-10">
+            <div class="bg-red-600/20 border border-red-500 text-red-400 font-bold py-6 rounded-2xl text-center">
+              SERVER OFFLINE
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- Server Rules - Improved Design -->
+  <!-- Rules -->
   <section id="rules" class="bg-zinc-950 py-24">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-5xl font-bold text-center mb-16">Server Rules</h2>
-      
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl">1</div>
-            <h3 class="text-xl font-semibold">No Metagaming / Powergaming</h3>
-          </div>
-          <p class="text-gray-300">Do not use out-of-character information in character.</p>
-        </div>
-
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl">2</div>
-            <h3 class="text-xl font-semibold">Respect All Players</h3>
-          </div>
-          <p class="text-gray-300">No toxicity, harassment, or hate speech allowed.</p>
-        </div>
-
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl">3</div>
-            <h3 class="text-xl font-semibold">Realistic Roleplay</h3>
-          </div>
-          <p class="text-gray-300">Act like a real person in real-life situations.</p>
-        </div>
-
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl">4</div>
-            <h3 class="text-xl font-semibold">No Random Deathmatching (RDM)</h3>
-          </div>
-          <p class="text-gray-300">Killing without valid roleplay reason is strictly prohibited.</p>
-        </div>
-
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 card md:col-span-2">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl">5</div>
-            <h3 class="text-xl font-semibold">No Cheating or Exploiting</h3>
-          </div>
-          <p class="text-gray-300">Using any mods, scripts, glitches, or third-party tools will result in a permanent ban.</p>
-        </div>
+        <div class="card bg-zinc-900 border border-zinc-800 rounded-3xl p-8">No Metagaming / Powergaming</div>
+        <div class="card bg-zinc-900 border border-zinc-800 rounded-3xl p-8">Respect All Players</div>
+        <div class="card bg-zinc-900 border border-zinc-800 rounded-3xl p-8">Realistic Roleplay</div>
+        <div class="card bg-zinc-900 border border-zinc-800 rounded-3xl p-8">No RDM</div>
       </div>
-
-      <p class="text-center text-gray-500 mt-10">Violating these rules may result in warnings, kicks, or bans.</p>
     </div>
   </section>
 
-  <!-- Recommended Similar Servers -->
+  <!-- Members -->
+  <section id="members" class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-5xl font-bold text-center mb-16">Our Members</h2>
+    <div id="membersGrid" class="grid md:grid-cols-4 gap-8"></div>
+  </section>
+
+  <!-- Similar -->
   <section id="similar" class="max-w-7xl mx-auto px-6 py-24">
     <h2 class="text-5xl font-bold text-center mb-16">Recommended Similar Servers</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="card bg-zinc-950 border border-zinc-800 rounded-3xl p-8 text-center">
-        <h3 class="text-2xl font-bold mb-2">NoPixel Style</h3>
-        <p class="text-gray-400 mb-6">High-quality serious roleplay</p>
-        <a href="#" class="text-orange-400 hover:text-orange-500">Join →</a>
-      </div>
-      <div class="card bg-zinc-950 border border-zinc-800 rounded-3xl p-8 text-center">
-        <h3 class="text-2xl font-bold mb-2">LS Police RP</h3>
-        <p class="text-gray-400 mb-6">Law enforcement focused</p>
-        <a href="#" class="text-orange-400 hover:text-orange-500">Join →</a>
-      </div>
-      <div class="card bg-zinc-950 border border-zinc-800 rounded-3xl p-8 text-center">
-        <h3 class="text-2xl font-bold mb-2">Economy Legends</h3>
-        <p class="text-gray-400 mb-6">Heavy economy & business RP</p>
-        <a href="#" class="text-orange-400 hover:text-orange-500">Join →</a>
-      </div>
+      <div class="card bg-zinc-950 border border-zinc-800 rounded-3xl p-8 text-center">NoPixel Style</div>
+      <div class="card bg-zinc-950 border border-zinc-800 rounded-3xl p-8 text-center">LS Police RP</div>
+      <div class="card bg-zinc-950 border border-zinc-800 rounded-3xl p-8 text-center">Economy Legends</div>
     </div>
   </section>
 
   <footer class="bg-zinc-950 border-t border-zinc-800 py-12 text-center text-gray-500 text-sm">
-    © 2026 Golden State Roleplay • Powered by FiveM • Hosted on Bisect Hosting
+    © 2026 Golden State Roleplay
   </footer>
 
   <script>
-    function copyDiscount() {
-      const code = "GSRP5";   // Change this to your actual discount code if needed
-      navigator.clipboard.writeText(code).then(() => {
-        const originalText = event.currentTarget.innerHTML;
-        event.currentTarget.innerHTML = `
-          <div class="text-black">
-            <p class="text-2xl font-black leading-none">COPIED!</p>
-            <p class="text-sm font-bold mt-2">Code: ${code}</p>
-          </div>`;
-        
-        setTimeout(() => {
-          event.currentTarget.innerHTML = originalText;
-        }, 2500);
-      });
-    }
+    const members = [
+      { id: "123456789012345678" },
+      { id: "987654321098765432" }
+    ];
+
+    const grid = document.getElementById("membersGrid");
+
+    members.forEach(member => {
+      const avatarUrl = `https://unavatar.io/discord/${member.id}`;
+
+      const card = document.createElement("div");
+      card.className = "card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 text-center";
+
+      card.innerHTML = `
+        <img src="${avatarUrl}" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-orange-500">
+        <h3 class="text-xl font-bold">Member</h3>
+        <p class="text-gray-400 text-sm">${member.id}</p>
+      `;
+
+      grid.appendChild(card);
+    });
   </script>
+
 </body>
 </html>
